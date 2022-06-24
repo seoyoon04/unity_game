@@ -58,6 +58,7 @@ public class Game : MonoBehaviour
             }
 
             state[x, y].type = Cell.Type.Mine;
+            state[x, y].revealed = true;
         }
     }
 
@@ -65,7 +66,29 @@ public class Game : MonoBehaviour
 
     }
 
+
+    private void Update () {
+        if (Input.GetMouseButtonDown(1)) {
+            // GenerateFlag();
+        }
+        else if (Input.GetMouseButtonDown(0)) {
+            Reveal();
+        }
+    }
+
     private void GenerateFlag () {
+        Vector3 mouseInput = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3Int cellPosition = board.tilemap.WorldToCell(WorldPosition);
+        
+
+
+        if (cell.type == Cell.Type.Invalid || cell.revealed) {
+            return;
+        } 
+
+    }
+
+    private void Reveal() {
 
     }
 
