@@ -194,6 +194,7 @@ public class Game : MonoBehaviour {
     private void Clear(){
         Debug.Log("clear");
         gameover = true;
+        GameOver();
     }
 
     private void Reveal_openedCell(){
